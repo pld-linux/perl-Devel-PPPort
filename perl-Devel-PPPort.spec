@@ -6,20 +6,18 @@
 %define	pdir	Devel
 %define	pnam	PPPort
 Summary:	Devel::PPPort - Perl/Pollution/Portability
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	Devel:::PPPort - Perl/Zanieczyszczenie/Przenośność
 Name:		perl-Devel-PPPort
 Version:	3.11_01
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/M/MH/MHX/Devel-PPPort-3.11_01.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/M/MH/MHX/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	d446bc2e6346d213dffa67d6d3ac2965
 URL:		http://search.cpan.org/dist/Devel-PPPort/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +36,21 @@ Perl versions from 5.003 to 5.9.4 are supported.
 
 This module is used by h2xs to write the file ppport.h.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+Perlowe API zmieniało się w czasie, zyskując nowe możliwości, nowe
+funkcje, zwiększając elastyczność i zmniejszając wpływ na środowisko
+przestrzeni nazw C (mniejsze zanieczyszczenie). Plik nagłówkowy
+zapisywany przez ten moduł, zwykle ppport.h, próbuje udostępnić
+niektóre z nowych możliwości API Perla w starszych wersjach Perla, aby
+mniej trzeba było martwić się o śledzenie starszych wersji.
+
+Devel::PPPort zawiera jedną funkcję - WriteFile. Jej jedynym celem
+jest zapis pliku nagłówkowego C ppport.h. Plik ten zawiera ciąg makr
+i, jeśli tego zażądano, funkcje pozwalające na budowanie modułów XS
+przy użyciu starszych wersji Perla. Aktualnie obsługiwane są wersje
+Perla od 5.003 do 5.9.4.
+
+Ten moduł jest używany przez h2xs do zapisu pliku ppport.h.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
