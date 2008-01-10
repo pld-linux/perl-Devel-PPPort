@@ -59,6 +59,7 @@ Ten moduł jest używany przez h2xs do zapisu pliku ppport.h.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
+	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
