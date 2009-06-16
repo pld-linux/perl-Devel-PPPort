@@ -8,13 +8,13 @@
 Summary:	Devel::PPPort - Perl/Pollution/Portability
 Summary(pl.UTF-8):	Devel:::PPPort - Perl/Zanieczyszczenie/Przenośność
 Name:		perl-Devel-PPPort
-Version:	3.11_01
-Release:	3
+Version:	3.19
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/M/MH/MHX/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d446bc2e6346d213dffa67d6d3ac2965
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	f835f18c0c4e9bfcdc371e6747e06f15
 URL:		http://search.cpan.org/dist/Devel-PPPort/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -32,7 +32,7 @@ Devel::PPPort contains a single function, called WriteFile. Its
 only purpose is to write the ppport.h C header file. This file
 contains a series of macros and, if explicitly requested, functions that
 allow XS modules to be built using older versions of Perl. Currently,
-Perl versions from 5.003 to 5.9.4 are supported.
+Perl versions from 5.003 to 5.10.0 are supported.
 
 This module is used by h2xs to write the file ppport.h.
 
@@ -48,7 +48,7 @@ Devel::PPPort zawiera jedną funkcję - WriteFile. Jej jedynym celem
 jest zapis pliku nagłówkowego C ppport.h. Plik ten zawiera ciąg makr
 i, jeśli tego zażądano, funkcje pozwalające na budowanie modułów XS
 przy użyciu starszych wersji Perla. Aktualnie obsługiwane są wersje
-Perla od 5.003 do 5.9.4.
+Perla od 5.003 do 5.10.0.
 
 Ten moduł jest używany przez h2xs do zapisu pliku ppport.h.
 
