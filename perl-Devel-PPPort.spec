@@ -23,16 +23,17 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Perl's API has changed over time, gaining new features, new functions,
 increasing its flexibility, and reducing the impact on the C namespace
-environment (reduced pollution). The header file written by this module,
-typically ppport.h, attempts to bring some of the newer Perl API
-features to older versions of Perl, so that you can worry less about
-keeping track of old releases, but users can still reap the benefit.
+environment (reduced pollution). The header file written by this
+module, typically ppport.h, attempts to bring some of the newer Perl
+API features to older versions of Perl, so that you can worry less
+about keeping track of old releases, but users can still reap the
+benefit.
 
 Devel::PPPort contains a single function, called WriteFile. Its
 only purpose is to write the ppport.h C header file. This file
-contains a series of macros and, if explicitly requested, functions that
-allow XS modules to be built using older versions of Perl. Currently,
-Perl versions from 5.003 to 5.10.0 are supported.
+contains a series of macros and, if explicitly requested, functions
+that allow XS modules to be built using older versions of Perl.
+Currently, Perl versions from 5.003 to 5.10.0 are supported.
 
 This module is used by h2xs to write the file ppport.h.
 
@@ -76,8 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README TODO
-%{perl_vendorarch}/Devel/*.pm
+%{perl_vendorarch}/Devel/PPPort.pm
 %dir %{perl_vendorarch}/auto/Devel/PPPort
-%{perl_vendorarch}/auto/Devel/PPPort/*.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Devel/PPPort/*.so
-%{_mandir}/man3/*
+%{perl_vendorarch}/auto/Devel/PPPort/PPPort.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Devel/PPPort/PPPort.so
+%{_mandir}/man3/Devel::PPPort.3pm*
