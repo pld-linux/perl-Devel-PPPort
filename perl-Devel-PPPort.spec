@@ -79,6 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README TODO
 %{perl_vendorarch}/Devel/PPPort.pm
 %dir %{perl_vendorarch}/auto/Devel/PPPort
-%{perl_vendorarch}/auto/Devel/PPPort/PPPort.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Devel/PPPort/PPPort.so
 %{_mandir}/man3/Devel::PPPort.3pm*
