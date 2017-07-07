@@ -8,13 +8,13 @@
 Summary:	Devel::PPPort - Perl/Pollution/Portability
 Summary(pl.UTF-8):	Devel:::PPPort - Perl/Zanieczyszczenie/Przenośność
 Name:		perl-Devel-PPPort
-Version:	3.20
-Release:	2
+Version:	3.36
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	491ff215ff03dffb84902f6b4bb78ada
+# Source0-md5:	e713c0b047949d1e1db5499af9f10b63
 URL:		http://search.cpan.org/dist/Devel-PPPort/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
