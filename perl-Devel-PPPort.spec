@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	PPPort
 Summary:	Devel::PPPort - Perl/Pollution/Portability
