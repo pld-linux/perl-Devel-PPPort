@@ -1,22 +1,24 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define	pdir	Devel
 %define	pnam	PPPort
 Summary:	Devel::PPPort - Perl/Pollution/Portability
 Summary(pl.UTF-8):	Devel:::PPPort - Perl/Zanieczyszczenie/Przenośność
 Name:		perl-Devel-PPPort
-Version:	3.36
-Release:	3
+Version:	3.68
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e713c0b047949d1e1db5499af9f10b63
-URL:		http://search.cpan.org/dist/Devel-PPPort/
+Source0:	https://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	4d86cd2f677e4cc584ef66d0515799fb
+URL:		https://metacpan.org/dist/Devel-PPPort
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,7 +34,7 @@ Devel::PPPort contains a single function, called WriteFile. Its
 only purpose is to write the ppport.h C header file. This file
 contains a series of macros and, if explicitly requested, functions
 that allow XS modules to be built using older versions of Perl.
-Currently, Perl versions from 5.003 to 5.10.0 are supported.
+Currently, Perl versions from 5.003_07 to 5.35.9 are supported.
 
 This module is used by h2xs to write the file ppport.h.
 
@@ -48,7 +50,7 @@ Devel::PPPort zawiera jedną funkcję - WriteFile. Jej jedynym celem
 jest zapis pliku nagłówkowego C ppport.h. Plik ten zawiera ciąg makr
 i, jeśli tego zażądano, funkcje pozwalające na budowanie modułów XS
 przy użyciu starszych wersji Perla. Aktualnie obsługiwane są wersje
-Perla od 5.003 do 5.10.0.
+Perla od 5.003_07 do 5.35.9.
 
 Ten moduł jest używany przez h2xs do zapisu pliku ppport.h.
 
@@ -58,6 +60,7 @@ Ten moduł jest używany przez h2xs do zapisu pliku ppport.h.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make} \
 	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
